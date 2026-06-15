@@ -50,16 +50,7 @@ Interest: ${data.inquiryType}
       <header className="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md border-b border-white/10 h-20 flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
           <a href="#" className="flex items-center gap-3 group">
-            {/* Logo Custom SVG */}
-            <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:opacity-80 transition-opacity">
-              <path d="M50 10L90 85H10L50 10Z" fill="url(#silverGrad)"/>
-              <defs>
-                <linearGradient id="silverGrad" x1="50" y1="10" x2="50" y2="85" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#f8fafc"/>
-                  <stop offset="1" stopColor="#94a3b8"/>
-                </linearGradient>
-              </defs>
-            </svg>
+            <img src="/logo.png" alt="PRAHARI Grid Systems Logo" className="h-[44px] w-auto group-hover:opacity-80 transition-opacity" />
             <div className="flex flex-col">
               <span className="text-white font-heading font-bold tracking-[0.15em] leading-tight text-lg">PRAHARI</span>
               <span className="text-gray-400 tracking-[0.3em] font-medium uppercase text-[0.6rem] leading-tight">Grid Systems</span>
