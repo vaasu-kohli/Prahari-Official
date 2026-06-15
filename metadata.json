@@ -1,0 +1,6 @@
+{
+  "name": "PRAHARI Grid Systems",
+  "description": "Modern Public Safety Infrastructure for Indian Cities",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
