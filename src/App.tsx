@@ -299,11 +299,11 @@ Interest: ${data.inquiryType}
             <div className="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 flex flex-col md:flex-row items-center md:items-start gap-10">
               <img 
                 src={vaasuImg} 
-                alt="Vaasu Kohli - Founder & CEO" 
+                alt="Vaasu Deep Kohli - Founder & CEO" 
                 className="w-48 h-48 object-cover rounded-2xl shadow-md border border-gray-100 shrink-0" 
               />
               <div>
-                <h2 className="text-3xl font-heading font-bold mb-1">Vaasu Kohli</h2>
+                <h2 className="text-3xl font-heading font-bold mb-1">Vaasu Deep Kohli</h2>
                 <h3 className="text-blue-600 tracking-wider uppercase text-sm font-semibold mb-6">Founder & CEO</h3>
                 <p className="text-gray-600 font-light text-lg 2xl:text-xl leading-relaxed italic">
                   "I started Prahari after recognizing two persistent challenges across Indian cities: limited access to immediate help during public emergencies and the lack of affordable outdoor visibility for local businesses. Prahari combines both into a single infrastructure model, where advertising revenue helps support public safety services. The goal is to build practical, scalable infrastructure that makes public spaces safer, smarter, and more connected."
