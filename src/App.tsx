@@ -3,14 +3,20 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { FormEvent, useState } from 'react';
+import { useState } from 'react';
 import { 
   ChevronRight, AlertTriangle, Headphones, Shield, 
   Presentation, Cloud, Mic, Building2, TrainFront, 
-  Plane, Trees, Store, MapPin, Mail, Phone, Radio,
-  CheckCircle2
+  Plane, Trees, Store, MapPin
 } from 'lucide-react';
 import { FadeIn } from './components/FadeIn';
+
+// Import Components
+import { ProductImageModal } from './components/ProductImageModal';
+import { VideoSection } from './components/VideoSection';
+import { CTASection } from './components/CTASection';
+import { ContactSection } from './components/ContactSection';
+import { FloatingContactButton } from './components/FloatingContactButton';
 
 // Import Generated Images
 import heroImg from './assets/images/prahari_hero_city_night_1781514384878.jpg';
@@ -23,25 +29,14 @@ import leftViewImg from './assets/images/prahari_left.jpg.png';
 import rightViewImg from './assets/images/prahari_right.jpg.png';
 
 export default function App() {
-  const [formStatus, setFormStatus] = useState<'idle' | 'submitted'>('idle');
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
-  const handleContactSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-    
-    const subject = encodeURIComponent(`Inquiry: ${data.inquiryType} from ${data.firstName} ${data.lastName}`);
-    const body = encodeURIComponent(`
-Name: ${data.firstName} ${data.lastName}
-Organization: ${data.organization}
-Email: ${data.email}
-Interest: ${data.inquiryType}
-    `);
-    
-    // Fallback to mailto if it's a real user
-    window.location.href = `mailto:vasudeepkohli@gmail.com?subject=${subject}&body=${body}`;
-    setFormStatus('submitted');
-  };
+  const productImages = [
+    { src: frontViewImg, label: "Front View" },
+    { src: backViewImg, label: "Back View" },
+    { src: leftViewImg, label: "Left View" },
+    { src: rightViewImg, label: "Right View" },
+  ];
 
   return (
     <div className="min-h-screen items-start bg-white font-sans text-gray-900 selection:bg-blue-200">
@@ -65,7 +60,7 @@ Interest: ${data.inquiryType}
           </nav>
           
           <a href="#contact" className="bg-white text-black rounded-full px-5 py-2.5 text-sm font-semibold hover:bg-gray-200 transition-colors">
-            Inquire Now
+            Partner With Us
           </a>
         </div>
       </header>
@@ -131,23 +126,21 @@ Interest: ${data.inquiryType}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-5">
               <div className="grid grid-cols-2 gap-4">
-                {[
-                  { img: frontViewImg, label: "Front View" },
-                  { img: backViewImg, label: "Back View" },
-                  { img: leftViewImg, label: "Left View" },
-                  { img: rightViewImg, label: "Right View" },
-                ].map((item, idx) => (
+                {productImages.map((item, idx) => (
                   <FadeIn key={idx} delay={0.1 + (idx * 0.05)}>
-                    <div className="bg-white rounded-[24px] p-4 border border-gray-100 shadow-sm flex flex-col items-center group">
+                    <button 
+                      onClick={() => setSelectedImageIndex(idx)}
+                      className="w-full bg-white rounded-[24px] p-4 border border-gray-100 shadow-sm flex flex-col items-center group cursor-zoom-in"
+                    >
                       <div className="w-full aspect-square md:aspect-[3/4] relative overflow-hidden rounded-xl mb-3 bg-gray-50 flex items-center justify-center">
                         <img 
-                          src={item.img} 
+                          src={item.src} 
                           alt={item.label} 
                           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
                       <span className="text-sm font-medium text-gray-600">{item.label}</span>
-                    </div>
+                    </button>
                   </FadeIn>
                 ))}
               </div>
@@ -314,102 +307,16 @@ Interest: ${data.inquiryType}
         </div>
       </section>
 
-      {/* SECTION 7: CONTACT / FORM */}
-      <section id="contact" className="bg-white py-32 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <FadeIn>
-              <div>
-                <h2 className="font-heading text-4xl font-bold tracking-tight mb-6 mt-4">Deploy PRAHARI in your city.</h2>
-                <p className="text-xl text-gray-600 leading-relaxed mb-12">
-                  We partner with municipalities, transit authorities, and institutional campuses to modernize urban infrastructure.
-                </p>
+      {/* SECTION 7: VIDEO SECTION */}
+      <VideoSection />
 
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-blue-50 text-blue-600 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                      <Mail className="w-5 h-5" />
-                    </div>
-                    <span className="text-gray-800 font-medium font-mono text-sm">vasudeepkohli@gmail.com</span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="bg-blue-50 text-blue-600 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                      <Phone className="w-5 h-5" />
-                    </div>
-                    <span className="text-gray-800 font-medium font-mono text-sm">+91 77809 87246</span>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="bg-blue-50 text-blue-600 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                      <Radio className="w-5 h-5" />
-                    </div>
-                    <p className="text-gray-600 text-sm leading-relaxed mt-2 items-start">
-                      Partnership, incubation, pilot deployment, investor, and government inquiries are routed directly to the founder.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
+      {/* SECTION 8: CTA SECTION */}
+      <CTASection />
 
-            <FadeIn delay={0.2}>
-              <div className="bg-gray-50 p-8 rounded-3xl border border-gray-200">
-                {formStatus === 'submitted' ? (
-                  <div className="h-full min-h-[350px] flex flex-col items-center justify-center text-center">
-                    <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6">
-                      <CheckCircle2 className="w-8 h-8" />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-2">Request Submitted</h3>
-                    <p className="text-gray-600 max-w-sm mb-6">
-                      Thank you for reaching out. Your inquiry has been routed to our team and we will be in touch shortly.
-                    </p>
-                    <button 
-                      onClick={() => setFormStatus('idle')}
-                      className="text-sm font-semibold text-blue-600 hover:text-blue-800"
-                    >
-                      Submit another inquiry
-                    </button>
-                  </div>
-                ) : (
-                  <form onSubmit={handleContactSubmit} className="space-y-4">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <label htmlFor="firstName" className="sr-only">First Name</label>
-                        <input id="firstName" name="firstName" required placeholder="First Name" className="w-full bg-white px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all" />
-                      </div>
-                      <div>
-                        <label htmlFor="lastName" className="sr-only">Last Name</label>
-                        <input id="lastName" name="lastName" required placeholder="Last Name" className="w-full bg-white px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all" />
-                      </div>
-                    </div>
-                    <div>
-                      <label htmlFor="organization" className="sr-only">Organization</label>
-                      <input id="organization" name="organization" required placeholder="Organization / Municipality" className="w-full bg-white px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all" />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="sr-only">Email Address</label>
-                      <input type="email" id="email" name="email" required placeholder="Work Email Address" className="w-full bg-white px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all" />
-                    </div>
-                    <div>
-                      <label htmlFor="inquiryType" className="sr-only">Inquiry Type</label>
-                      <select id="inquiryType" name="inquiryType" required defaultValue="" className="w-full bg-white px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all text-gray-700">
-                        <option value="" disabled>Select Inquiry Type...</option>
-                        <option value="Deployment Information">Deployment Information</option>
-                        <option value="Partnership">Partnership</option>
-                        <option value="Investment">Investment</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-                    <button type="submit" className="w-full bg-black hover:bg-gray-800 text-white font-semibold rounded-xl py-4 mt-2 transition-colors">
-                      Submit Inquiry
-                    </button>
-                  </form>
-                )}
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
+      {/* SECTION 9: CONTACT / FORM */}
+      <ContactSection />
 
-      {/* SECTION 8: FOOTER */}
+      {/* SECTION 10: FOOTER */}
       <footer className="bg-black text-white py-12 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
@@ -426,6 +333,18 @@ Interest: ${data.inquiryType}
           </div>
         </div>
       </footer>
+
+      {/* Floating Action Button */}
+      <FloatingContactButton />
+
+      {/* Image Modal */}
+      {selectedImageIndex !== null && (
+        <ProductImageModal 
+          images={productImages} 
+          initialIndex={selectedImageIndex} 
+          onClose={() => setSelectedImageIndex(null)} 
+        />
+      )}
 
     </div>
   );
