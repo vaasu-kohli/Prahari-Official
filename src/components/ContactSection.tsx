@@ -20,7 +20,7 @@ export function ContactSection() {
     // Validation
     const newErrors: Record<string, boolean> = {};
     let hasError = false;
-    ['firstName', 'organization', 'email', 'phone', 'inquiryType', 'message'].forEach(field => {
+    ['firstName', 'organization', 'email', 'phone', 'deploymentLocation', 'inquiryType', 'message'].forEach(field => {
       if (!data[field] || data[field].trim() === '') {
         newErrors[field] = true;
         hasError = true;
@@ -39,6 +39,7 @@ export function ContactSection() {
 Organization: ${data.organization}
 Work Email: ${data.email}
 Phone: ${data.phone}
+Deployment Location: ${data.deploymentLocation}
 Inquiry Type: ${data.inquiryType}
 
 Message:
@@ -55,14 +56,14 @@ ${data.message}`);
   };
 
   return (
-    <section id="contact" className="bg-white py-32 border-t border-gray-100">
+    <section id="contact" className="bg-white py-24 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <FadeIn>
             <div>
-              <h2 className="font-heading text-4xl font-bold tracking-tight mb-6 mt-4">Deploy PRAHARI in Your City.</h2>
+              <h2 className="font-heading text-4xl font-bold tracking-tight mb-6 mt-4">Partner With Us.</h2>
               <p className="text-xl text-gray-600 leading-relaxed mb-12">
-                We partner with municipalities, transit authorities, and institutional campuses to modernize urban infrastructure.
+                Connect with our team for municipal deployments, commercial partnerships, investment opportunities, and smart city integrations.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -90,12 +91,12 @@ ${data.message}`);
                   <p className="text-gray-500 text-sm">Government & pilot inquiries.</p>
                 </div>
 
-                <a href="#" className="bg-gray-50 hover:bg-gray-100 p-6 rounded-2xl border border-gray-100 transition-colors group block cursor-not-allowed">
+                <a href="/PRAHARI_Brochure_Final.pdf" target="_blank" rel="noopener noreferrer" className="bg-gray-50 hover:bg-gray-100 p-6 rounded-2xl border border-gray-100 transition-colors group block">
                   <div className="bg-orange-50 text-orange-600 w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <FileText className="w-6 h-6" />
                   </div>
                   <h3 className="font-semibold text-lg mb-1">Company Brochure</h3>
-                  <p className="text-gray-500 text-sm">Available upon request.</p>
+                  <p className="text-gray-500 text-sm">View or download PDF.</p>
                 </a>
               </div>
             </div>
@@ -175,6 +176,29 @@ ${data.message}`);
                   </div>
 
                   <div>
+                    <label htmlFor="deploymentLocation" className="block text-sm font-medium text-gray-700 mb-1">Intended Deployment Location</label>
+                    <select 
+                      id="deploymentLocation" name="deploymentLocation" defaultValue=""
+                      onChange={handleInputChange}
+                      className={cn(
+                        "w-full bg-gray-50 px-4 py-3 rounded-xl border focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all text-gray-700",
+                        errors.deploymentLocation ? "border-red-500" : "border-gray-200"
+                      )}
+                    >
+                      <option value="" disabled>Select Deployment Location...</option>
+                      <option value="Smart City Corridors">Smart City Corridors</option>
+                      <option value="Municipal Markets">Municipal Markets</option>
+                      <option value="Commercial Districts">Commercial Districts</option>
+                      <option value="Public Parks">Public Parks</option>
+                      <option value="Bus Terminals">Bus Terminals</option>
+                      <option value="Metro Station Entrances">Metro Station Entrances</option>
+                      <option value="Government Agency">Government Agency</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    {errors.deploymentLocation && <p className="text-red-500 text-xs mt-1">Deployment Location is required.</p>}
+                  </div>
+
+                  <div>
                     <label htmlFor="inquiryType" className="block text-sm font-medium text-gray-700 mb-1">Inquiry Type</label>
                     <select 
                       id="inquiryType" name="inquiryType" defaultValue=""
@@ -206,14 +230,11 @@ ${data.message}`);
                     {errors.message && <p className="text-red-500 text-xs mt-1">Message is required.</p>}
                   </div>
 
-                  <div className="pt-2 flex flex-col sm:flex-row gap-4">
-                    <button type="submit" className="flex-1 bg-black hover:bg-gray-800 text-white font-semibold rounded-xl py-4 transition-colors flex justify-center items-center gap-2">
-                      Submit Inquiry
+                  <div className="pt-2">
+                    <button type="submit" className="w-full bg-black hover:bg-gray-800 text-white font-semibold rounded-xl py-4 transition-colors flex justify-center items-center gap-2">
+                      Connect With Us
                       <ChevronRight className="w-5 h-5" />
                     </button>
-                    <a href="mailto:vasudeepkohli@gmail.com?subject=General Inquiry - PRAHARI" className="flex-1 bg-white hover:bg-gray-50 text-gray-800 font-semibold rounded-xl py-4 transition-colors border border-gray-200 flex justify-center items-center">
-                      Email Us Directly
-                    </a>
                   </div>
                 </form>
               )}

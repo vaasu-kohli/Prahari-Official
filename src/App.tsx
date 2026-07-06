@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { 
   ChevronRight, AlertTriangle, Headphones, Shield, 
   Presentation, Cloud, Mic, Building2, TrainFront, 
-  Plane, Trees, Store, MapPin
+  Plane, Trees, Store, MapPin, FileText, Mail, Phone
 } from 'lucide-react';
 import { FadeIn } from './components/FadeIn';
 
@@ -19,14 +19,22 @@ import { ContactSection } from './components/ContactSection';
 import { FloatingContactButton } from './components/FloatingContactButton';
 
 // Import Generated Images
-import heroImg from './assets/images/prahari_hero_city_night_1781514384878.jpg';
-import sosImg from './assets/images/prahari_detail_sos_1781514400991.jpg';
-import cameraImg from './assets/images/prahari_detail_camera_1781514421057.jpg';
+import heroImg from './assets/images/prahari_hero_new.png';
+import sosImg from './assets/images/prahari_new_sos.png';
+import cameraImg from './assets/images/prahari_new_camera.png';
 import vaasuImg from './assets/images/vaasu_picture.png';
 import frontViewImg from './assets/images/prahari_front.jpg.png';
 import backViewImg from './assets/images/prahari_back.jpg.png';
 import leftViewImg from './assets/images/prahari_left.jpg.png';
 import rightViewImg from './assets/images/prahari_right.jpg.png';
+
+// Import Deployment Images
+import envSmartCity from './assets/images/env_smartcity.png';
+import envMarket from './assets/images/env_market.png';
+import envCommercial from './assets/images/env_commercial.png';
+import envPark from './assets/images/env_park.png';
+import envBus from './assets/images/env_bus.png';
+import envRailway from './assets/images/env_metro.png';
 
 export default function App() {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
@@ -70,32 +78,29 @@ export default function App() {
         <img 
           src={heroImg} 
           alt="Prahari pillar in Indian smart city at night" 
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent" />
         
         <div className="relative max-w-7xl mx-auto px-6 w-full z-10">
           <FadeIn>
-            <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-8">
+            <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-8 mt-12">
               <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-              <span className="text-white text-[10px] font-bold tracking-wider uppercase opacity-90">Currently in Product Development & Pilot Preparation</span>
+              <span className="text-white text-[10px] font-bold tracking-wider uppercase opacity-90">Dual-Purpose Smart Infrastructure</span>
             </div>
           </FadeIn>
           
           <FadeIn delay={0.1}>
             <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-6 max-w-4xl">
-              Modern Public Safety Infrastructure <br className="hidden md:block"/>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">for Indian Cities.</span>
+              Smart Public Infrastructure <br className="hidden md:block"/>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">for Urban India.</span>
             </h1>
           </FadeIn>
           
           <FadeIn delay={0.2}>
-            <h2 className="text-xl md:text-2xl text-blue-300 font-medium mb-6 max-w-2xl">
-              Smart Public Infrastructure for Urban India
-            </h2>
             <p className="text-lg text-gray-300 mb-10 max-w-2xl leading-relaxed">
-              Building safer, smarter, and more connected public spaces through technology-driven public safety infrastructure.
+              A scalable smart infrastructure platform combining <span className="text-white font-medium">Digital Advertising</span> with <span className="text-white font-medium">Emergency SOS Access</span>, <span className="text-white font-medium">Public Communication</span>, <span className="text-white font-medium">Smart Surveillance</span>, and <span className="text-white font-medium">Remote Monitoring</span>.
             </p>
           </FadeIn>
           
@@ -106,7 +111,7 @@ export default function App() {
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a href="#deployment" className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 rounded-full text-white px-8 py-4 font-semibold transition-all">
-                Explore Pilot Deployment
+                Explore Deployments
               </a>
             </div>
           </FadeIn>
@@ -114,11 +119,11 @@ export default function App() {
       </section>
 
       {/* SECTION 2: PRODUCT */}
-      <section id="product" className="bg-gray-50 py-32">
+      <section id="product" className="bg-gray-50 py-24">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <div className="mb-16 max-w-3xl">
-              <h2 className="font-heading text-4xl font-bold tracking-tight mb-4">Prahari Infrastructure Platform</h2>
+            <div className="mb-12 max-w-3xl">
+              <h2 className="font-heading text-4xl font-bold tracking-tight mb-4">Platform Overview</h2>
               <p className="text-xl text-gray-600 leading-relaxed">A unified infrastructure platform designed to improve emergency accessibility, public communication, and smart city readiness across urban environments.</p>
             </div>
           </FadeIn>
@@ -149,12 +154,12 @@ export default function App() {
             <div className="lg:col-span-7">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
-                  { icon: AlertTriangle, title: "Emergency SOS Access", desc: "A highly visible emergency button connecting instantly to dispatch." },
+                  { icon: AlertTriangle, title: "Emergency SOS Access", desc: "A highly visible emergency button connecting instantly to dispatch operators." },
                   { icon: Headphones, title: "Live Operator Connectivity", desc: "Two-way audio communication with emergency services via built-in microphone." },
-                  { icon: Shield, title: "Smart Surveillance", desc: "Integrated surveillance camera enhancing situational awareness around the unit." },
-                  { icon: Presentation, title: "Digital Display Infrastructure", desc: "High-resolution digital displays for civic announcements and public messaging." },
-                  { icon: Cloud, title: "Centralized Monitoring", desc: "Continuous uptime monitoring and remote digital content management." },
-                  { icon: Mic, title: "Public Communication", desc: "Built-in public address system for emergency broadcasting and community alerts." },
+                  { icon: Shield, title: "HD Surveillance Camera", desc: "Integrated high-definition surveillance enhancing situational awareness." },
+                  { icon: Mic, title: "Public Communication System", desc: "Built-in public address system for emergency broadcasting and alerts." },
+                  { icon: Presentation, title: "Digital Advertising Display", desc: "High-resolution digital displays for civic announcements and commercial visibility." },
+                  { icon: Cloud, title: "Remote Monitoring Dashboard", desc: "Continuous uptime monitoring and remote digital content management." },
                 ].map((feature, i) => (
                   <FadeIn key={i} delay={0.2 + (i * 0.05)}>
                     <div className="bg-white rounded-2xl p-6 border border-gray-100 hover:border-blue-100 hover:shadow-lg transition-all h-full flex flex-col group">
@@ -197,28 +202,32 @@ export default function App() {
       </section>
 
       {/* SECTION 3: DEPLOYMENT SETTINGS */}
-      <section id="deployment" className="bg-white py-32 border-y border-gray-100">
+      <section id="deployment" className="bg-white py-24 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="font-heading text-4xl font-bold tracking-tight mb-4">Target Deployment Environments</h2>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="font-heading text-4xl font-bold tracking-tight mb-4">Primary Deployment Environments</h2>
               <p className="text-xl text-gray-600 leading-relaxed">Preparing for pilot and scalable deployments across high-footfall urban environments where public safety and visibility intersect.</p>
             </div>
           </FadeIn>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: Building2, label: "Smart Cities" },
-              { icon: TrainFront, label: "Metro Stations" },
-              { icon: Plane, label: "Airports" },
-              { icon: Trees, label: "University Campuses" },
-              { icon: Store, label: "Commercial Districts" },
-              { icon: MapPin, label: "Public Markets" },
+              { img: envRailway, label: "Smart City Corridors", desc: "Municipal roads and smart city development zones requiring connected public infrastructure." },
+              { img: envMarket, label: "Municipal Markets", desc: "High-footfall public markets where local businesses need affordable visibility and communities need accessible safety infrastructure." },
+              { img: envBus, label: "Commercial Districts", desc: "Retail streets, shopping zones, clinics, restaurants, and business clusters requiring public communication and advertising infrastructure." },
+              { img: envPark, label: "Public Parks", desc: "Community gathering spaces benefiting from emergency access, public announcements, and visitor information systems." },
+              { img: envSmartCity, label: "Bus Terminals", desc: "Transit hubs with high daily footfall where public communication and emergency accessibility are essential." },
+              { img: envRailway, label: "Metro Station Entrances", desc: "Busy public access points that require visibility, communication, and rapid emergency assistance." },
             ].map((env, i) => (
               <FadeIn key={i} delay={0.1 + (i * 0.1)}>
-                <div className="bg-gray-50 border border-gray-100 hover:bg-black hover:border-black hover:text-white transition-colors duration-300 rounded-2xl p-8 flex flex-col items-center text-center group cursor-default">
-                  <env.icon className="w-10 h-10 text-gray-400 group-hover:text-white/80 transition-colors mb-4" strokeWidth={1.5} />
-                  <h3 className="font-semibold text-lg">{env.label}</h3>
+                <div className="relative h-80 rounded-2xl overflow-hidden group border border-gray-200 shadow-sm flex flex-col justify-end">
+                  <img src={env.img} alt={env.label} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90 transition-opacity" />
+                  <div className="relative z-10 p-6">
+                    <h3 className="text-white font-semibold text-xl mb-2">{env.label}</h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">{env.desc}</p>
+                  </div>
                 </div>
               </FadeIn>
             ))}
@@ -226,33 +235,33 @@ export default function App() {
         </div>
       </section>
 
-      {/* SECTION 4: WHY IT MATTERS */}
-      <section id="advantages" className="bg-gray-50 py-32 border-b border-gray-100">
+      {/* SECTION 4: WHY PRAHARI */}
+      <section id="advantages" className="bg-gray-50 py-24 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <div className="mb-16 max-w-4xl">
-              <h2 className="font-heading text-4xl font-bold tracking-tight mb-6">Why Public Safety Infrastructure Matters</h2>
-              <p className="text-xl text-gray-600 leading-relaxed">India's rapidly growing urban population requires smarter and more accessible public infrastructure. Emergency response accessibility, public communication systems, and connected urban networks are becoming increasingly important as cities modernize and expand.</p>
+            <div className="mb-12 max-w-4xl">
+              <h2 className="font-heading text-4xl font-bold tracking-tight mb-6">Why PRAHARI?</h2>
+              <p className="text-xl text-gray-600 leading-relaxed">A unified approach to urban infrastructure, blending commercial viability with critical public safety capabilities.</p>
             </div>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <FadeIn delay={0.1}>
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full">
-                <h3 className="font-bold text-xl mb-3">Growing Urban Populations</h3>
-                <p className="text-gray-600 leading-relaxed">Indian cities are expanding rapidly, increasing the need for accessible public safety infrastructure.</p>
+                <h3 className="font-bold text-xl mb-3">Revenue + Safety</h3>
+                <p className="text-gray-600 leading-relaxed">Advertising revenue helps support public safety infrastructure.</p>
               </div>
             </FadeIn>
             <FadeIn delay={0.2}>
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full">
-                <h3 className="font-bold text-xl mb-3">Emergency Accessibility</h3>
-                <p className="text-gray-600 leading-relaxed">Visible and immediate access to assistance can improve emergency response and public confidence.</p>
+                <h3 className="font-bold text-xl mb-3">One Installation, Multiple Benefits</h3>
+                <p className="text-gray-600 leading-relaxed">A single deployment provides advertising, communication, surveillance, and emergency access.</p>
               </div>
             </FadeIn>
             <FadeIn delay={0.3}>
               <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full">
-                <h3 className="font-bold text-xl mb-3">Smart City Modernization</h3>
-                <p className="text-gray-600 leading-relaxed">Modern urban infrastructure increasingly depends on connected systems that improve safety, communication, and operational efficiency.</p>
+                <h3 className="font-bold text-xl mb-3">Smart City Ready</h3>
+                <p className="text-gray-600 leading-relaxed">Designed for campuses, transit hubs, municipalities, and commercial districts.</p>
               </div>
             </FadeIn>
           </div>
@@ -260,10 +269,10 @@ export default function App() {
       </section>
 
       {/* SECTION 5: IMPACT & SCALABLE MODEL */}
-      <section className="bg-black text-white py-32">
+      <section className="bg-black text-white py-24">
         <div className="max-w-7xl mx-auto px-6">
           <FadeIn>
-            <h2 className="font-heading text-4xl font-bold tracking-tight mb-16">Impact & Scalable Business Model</h2>
+            <h2 className="font-heading text-4xl font-bold tracking-tight mb-12">Impact & Scalable Business Model</h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -297,9 +306,9 @@ export default function App() {
               />
               <div>
                 <h2 className="text-3xl font-heading font-bold mb-1">Vaasu Deep Kohli</h2>
-                <h3 className="text-blue-600 tracking-wider uppercase text-sm font-semibold mb-6">Founder & CEO</h3>
-                <p className="text-gray-600 font-light text-lg 2xl:text-xl leading-relaxed italic">
-                  "I started Prahari after recognizing two persistent challenges across Indian cities: limited access to immediate help during public emergencies and the lack of affordable outdoor visibility for local businesses. Prahari combines both into a single infrastructure model, where advertising revenue helps support public safety services. The goal is to build practical, scalable infrastructure that makes public spaces safer, smarter, and more connected."
+                <h3 className="text-blue-600 tracking-wider uppercase text-sm font-semibold mb-6">Founder & CEO <span className="text-gray-300 mx-2">|</span> PRAHARI Grid Systems</h3>
+                <p className="text-gray-700 font-medium text-xl leading-relaxed">
+                  "Building practical, scalable urban infrastructure that connects commercial visibility with critical public safety capabilities."
                 </p>
               </div>
             </div>
@@ -316,20 +325,57 @@ export default function App() {
       {/* SECTION 9: CONTACT / FORM */}
       <ContactSection />
 
+      {/* SECTION 9.5: BROCHURE DOWNLOAD */}
+      <section className="bg-gray-50 py-16 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <FadeIn>
+            <h2 className="font-heading text-3xl font-bold tracking-tight mb-4">Download Company Brochure</h2>
+            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">Learn more about PRAHARI’s infrastructure platform, deployment environments, and capabilities.</p>
+            <a 
+              href="/PRAHARI_Brochure_Final.pdf" 
+              download
+              className="inline-flex items-center gap-2 bg-black text-white hover:bg-gray-800 rounded-full px-8 py-3 font-semibold transition-colors"
+            >
+              <FileText className="w-5 h-5" />
+              Download Brochure (PDF)
+            </a>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* SECTION 10: FOOTER */}
-      <footer className="bg-black text-white py-12 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="flex items-baseline mb-2">
-              <span className="font-heading text-2xl font-bold tracking-tighter">PRAHARI</span>
-              <span className="text-gray-400 text-xs tracking-widest uppercase ml-3">Grid Systems</span>
+      <footer className="bg-black text-white py-16 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6 mb-12">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <div className="flex items-baseline mb-4">
+                <span className="font-heading text-2xl font-bold tracking-tighter">PRAHARI</span>
+                <span className="text-gray-400 text-xs tracking-widest uppercase ml-3">Grid Systems</span>
+              </div>
+              <p className="text-gray-400 max-w-sm leading-relaxed">
+                Smart Public Infrastructure for Urban India.
+              </p>
             </div>
-            <p className="text-sm text-gray-500">Modern Public Safety Infrastructure for Indian Cities</p>
+            
+            <div className="flex flex-col items-center md:items-end text-gray-400 space-y-3">
+              <a href="mailto:vasudeepkohli@gmail.com" className="hover:text-white transition-colors flex items-center gap-2">
+                <Mail className="w-4 h-4" /> vasudeepkohli@gmail.com
+              </a>
+              <a href="tel:+917780987246" className="hover:text-white transition-colors flex items-center gap-2">
+                <Phone className="w-4 h-4" /> +91 77809 87246
+              </a>
+              <a href="https://prahari-official.vercel.app/" className="hover:text-white transition-colors flex items-center gap-2">
+                <Cloud className="w-4 h-4" /> https://prahari-official.vercel.app/
+              </a>
+            </div>
           </div>
           
-          <div className="flex flex-col items-center md:items-end text-sm text-gray-500 space-y-1">
-            <span>Contact: <a href="mailto:vasudeepkohli@gmail.com" className="text-white hover:text-gray-300 transition-colors">vasudeepkohli@gmail.com</a></span>
-            <span className="text-white">+91 77809 87246</span>
+          <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+            <p>&copy; {new Date().getFullYear()} PRAHARI Grid Systems. All rights reserved.</p>
+            <div className="flex gap-4">
+              <a href="#" className="hover:text-gray-300">Privacy Policy</a>
+              <a href="#" className="hover:text-gray-300">Terms of Service</a>
+            </div>
           </div>
         </div>
       </footer>

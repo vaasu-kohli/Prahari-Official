@@ -1,0 +1,1 @@
+const fs=require('fs'); ['ChatGPT Image Jul 1, 2026, 12_27_20 AM.png', 'ChatGPT Image Jul 1, 2026, 12_27_26 AM.png', 'ChatGPT Image Jul 1, 2026, 12_27_37 AM.png', 'ChatGPT Image Jul 1, 2026, 12_27_44 AM.png', 'ChatGPT Image Jul 1, 2026, 12_27_49 AM.png', 'ChatGPT Image Jul 1, 2026, 12_27_53 AM.png'].forEach(f => console.log(f, fs.statSync(f).size))

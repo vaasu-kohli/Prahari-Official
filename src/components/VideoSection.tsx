@@ -1,16 +1,16 @@
 import { Play } from 'lucide-react';
 import { FadeIn } from './FadeIn';
-import heroImg from '../assets/images/prahari_hero_city_night_1781514384878.jpg';
+import heroImg from '../assets/images/prahari_hero_new.png';
 
 export function VideoSection() {
   return (
-    <section className="bg-black py-32 border-t border-white/10">
+    <section className="bg-black py-24 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6">
         <FadeIn>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="font-heading text-4xl font-bold tracking-tight text-white mb-4">See PRAHARI in Action</h2>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="font-heading text-4xl font-bold tracking-tight text-white mb-4">Watch the Complete PRAHARI Demonstration</h2>
             <p className="text-xl text-gray-400 leading-relaxed">
-              Discover how our infrastructure transforms public spaces by providing immediate safety access and modern communication capabilities.
+              This demonstration showcases emergency response functionality, public communication capabilities, and digital infrastructure features.
             </p>
           </div>
         </FadeIn>
