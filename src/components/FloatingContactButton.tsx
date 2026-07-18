@@ -50,7 +50,7 @@ export function FloatingContactButton() {
                 <div className="bg-blue-50 text-blue-700 p-2 rounded-lg"><LinkIcon className="w-4 h-4" /></div>
                 LinkedIn
               </a>
-              <a href="/PRAHARI_Brochure_Final.pdf" download className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-xl transition-colors text-sm text-gray-700 font-medium">
+              <a href="/PRAHARI_Brochure_Final.pdf?v=2" download className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-xl transition-colors text-sm text-gray-700 font-medium">
                 <div className="bg-gray-100 text-gray-600 p-2 rounded-lg"><FileText className="w-4 h-4" /></div>
                 Download Brochure
               </a>

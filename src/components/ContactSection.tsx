@@ -91,7 +91,7 @@ ${data.message}`);
                   <p className="text-gray-500 text-sm">Government & pilot inquiries.</p>
                 </div>
 
-                <a href="/PRAHARI_Brochure_Final.pdf" target="_blank" rel="noopener noreferrer" className="bg-gray-50 hover:bg-gray-100 p-6 rounded-2xl border border-gray-100 transition-colors group block">
+                <a href="/PRAHARI_Brochure_Final.pdf?v=2" target="_blank" rel="noopener noreferrer" className="bg-gray-50 hover:bg-gray-100 p-6 rounded-2xl border border-gray-100 transition-colors group block">
                   <div className="bg-orange-50 text-orange-600 w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                     <FileText className="w-6 h-6" />
                   </div>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PRAHARI Brochure</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #333;
+      -webkit-print-color-adjust: exact;
+    }
+    .page {
+      width: 794px;
+      height: 1123px;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+      background: white;
+      box-sizing: border-box;
+    }
+    /* Cover Page */
+    .cover-page {
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+    .cover-page img {
+      width: 300px;
+      margin-bottom: 40px;
+    }
+    .cover-page h1 {
+      font-size: 56px;
+      margin: 0 0 20px 0;
+      letter-spacing: -1px;
+    }
+    .cover-page h2 {
+      font-size: 24px;
+      font-weight: 400;
+      color: #ccc;
+      margin: 0 0 60px 0;
+    }
+    .cover-page .url {
+      font-size: 18px;
+      color: #0070f3;
+    }
+    /* Challenge Page */
+    .content-page {
+      padding: 80px 60px;
+    }
+    .header {
+      font-size: 16px;
+      font-weight: 700;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    .title {
+      font-size: 42px;
+      font-weight: 700;
+      margin: 0 0 40px 0;
+      letter-spacing: -1px;
+    }
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .card {
+      background: #f9fafb;
+      padding: 30px;
+      border-radius: 12px;
+      border-left: 4px solid #000;
+    }
+    .card h3 {
+      font-size: 24px;
+      margin: 0 0 10px 0;
+    }
+    .card p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+      margin: 0;
+    }
+    /* Solution Page */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+    }
+    .feature-list li {
+      font-size: 18px;
+      margin-bottom: 15px;
+      padding-left: 30px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .feature-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-weight: bold;
+    }
+    .image-grid {
+      display: flex;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .image-grid img {
+      flex: 1;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    /* Founder Page */
+    .founder-page {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .founder-profile {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-top: 60px;
+    }
+    .founder-profile img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .founder-info h3 {
+      font-size: 32px;
+      margin: 0 0 10px 0;
+    }
+    .founder-info p {
+      font-size: 20px;
+      color: #666;
+      margin: 0 0 20px 0;
+    }
+    .contact-details {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <!-- PAGE 1: COVER -->
+  <div class="page cover-page">
+    <img src="file:///app/applet/public/compressed/prahari_hero_new.jpg" alt="PRAHARI Pillar" />
+    <h1>PRAHARI</h1>
+    <h2>Smart Public Infrastructure for Urban India</h2>
+    <div class="url">prahari-official.vercel.app</div>
+  </div>
+  <!-- PAGE 2: CHALLENGE -->
+  <div class="page content-page">
+    <div class="header">02 THE CHALLENGE</div>
+    <div class="title">Public Spaces Deserve Better.</div>
+    <div class="grid">
+      <div class="card">
+        <h3>No Emergency Access</h3>
+        <p>Citizens in danger have no visible, physical way to reach help in a public emergency.</p>
+      </div>
+      <div class="card">
+        <h3>Disconnected Spaces</h3>
+        <p>Public environments lack the connected infrastructure needed for realtime safety and response.</p>
+      </div>
+      <div class="card">
+        <h3>Untapped Urban Assets</h3>
+        <p>Street furniture sits idle, generating no civic value and no safety benefit for the community.</p>
+      </div>
+    </div>
+  </div>
+  <!-- PAGE 3: SOLUTION -->
+  <div class="page content-page">
+    <div class="header">03 THE SOLUTION</div>
+    <div class="title">One Intelligent Infrastructure Pillar.</div>
+    <p style="font-size: 22px; line-height: 1.6; color: #444;">PRAHARI turns every public space into a productive, connected, and safe environment. It generates advertising value during the day and delivers emergency infrastructure whenever it is needed.</p>
+    <h3 style="font-size: 24px; margin-top: 40px;">Why PRAHARI Works:</h3>
+    <ul class="feature-list">
+      <li>Advertising revenue funds public safety, with no public expenditure required</li>
+      <li>Citizens get visible, accessible emergency access every hour of the day</li>
+      <li>Cities gain real-time monitoring and direct communication with the public</li>
+      <li>Local businesses get affordable, hyperlocal outdoor advertising</li>
+    </ul>
+    <div class="image-grid">
+      <img src="file:///app/applet/public/compressed/prahari_commercial_1782825441207.jpg" />
+      <img src="file:///app/applet/public/compressed/prahari_smartcity_1782825503372.jpg" />
+    </div>
+  </div>
+  <!-- PAGE 4: MEET PRAHARI -->
+  <div class="page content-page">
+    <div class="header">04 MEET PRAHARI</div>
+    <div class="title">Engineered for Urban India.</div>
+    <div style="display: flex; gap: 40px;">
+      <div style="flex: 1;">
+        <img src="file:///app/applet/public/compressed/prahari_front.jpg.jpg" style="width: 100%; object-fit: contain; height: 700px;" />
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 30px;">
+        <div>
+          <h4 style="font-size: 20px; margin: 0 0 5px 0;">360 Degree Surveillance</h4>
+          <p style="margin:0; color:#555;">Dome camera, continuous coverage</p>
+        </div>
+        <div>
+          <h4 style="font-size: 20px; margin: 0 0 5px 0;">Emergency SOS Button</h4>
+          <p style="margin:0; color:#555;">IP67 physical button, live operator</p>
+        </div>
+        <div>
+          <h4 style="font-size: 20px; margin: 0 0 5px 0;">Smart Digital Display</h4>
+          <p style="margin:0; color:#555;">High-brightness outdoor screen</p>
+        </div>
+        <div>
+          <h4 style="font-size: 20px; margin: 0 0 5px 0;">Two-Way Communication</h4>
+          <p style="margin:0; color:#555;">Live audio and video to responders</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- PAGE 5: DEPLOYMENT ENVIRONMENTS -->
+  <div class="page content-page">
+    <div class="header">05 DEPLOYMENT ENVIRONMENTS</div>
+    <div class="title">Engineered to Deploy Across Every Public Setting.</div>
+    <p style="font-size: 20px; margin-bottom: 40px;">From a single campus to a city-wide network, PRAHARI is planned around where people already gather.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+      <div>
+        <img src="file:///app/applet/public/compressed/env_smartcity.jpg" style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom: 10px;" />
+        <h4 style="font-size: 20px; margin: 0 0 5px 0;">Smart Cities</h4>
+        <p style="margin:0; color:#555;">Municipal districts and corridors</p>
+      </div>
+      <div>
+        <img src="file:///app/applet/public/compressed/env_metro.jpg" style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom: 10px;" />
+        <h4 style="font-size: 20px; margin: 0 0 5px 0;">Metro Stations</h4>
+        <p style="margin:0; color:#555;">Platforms and concourses</p>
+      </div>
+      <div>
+        <img src="file:///app/applet/public/compressed/env_park.jpg" style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom: 10px;" />
+        <h4 style="font-size: 20px; margin: 0 0 5px 0;">Public Parks</h4>
+        <p style="margin:0; color:#555;">Open spaces and recreation zones</p>
+      </div>
+      <div>
+        <img src="file:///app/applet/public/compressed/env_market.jpg" style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom: 10px;" />
+        <h4 style="font-size: 20px; margin: 0 0 5px 0;">Commercial Areas</h4>
+        <p style="margin:0; color:#555;">High streets and markets</p>
+      </div>
+    </div>
+  </div>
+  <!-- PAGE 6: FOUNDER -->
+  <div class="page content-page founder-page">
+    <div>
+      <div class="header">06 FOUNDER AND VISION</div>
+      <div class="title">Partner with Us.</div>
+      <p style="font-size: 24px; font-weight: 600; line-height: 1.6; margin-top: 40px; color: #222;">
+        “I founded PRAHARI to solve two persistent urban challenges: immediate access to help during emergencies and affordable public visibility for local businesses. By combining both into one intelligent infrastructure platform, every deployment creates safer, smarter, and more connected public spaces.”
+      </p>
+      <div class="founder-profile">
+        <img src="file:///app/applet/public/compressed/vaasu_picture.jpg" alt="Vaasu Deep Kohli" />
+        <div class="founder-info">
+          <h3>Vaasu Deep Kohli</h3>
+          <p>Founder & CEO</p>
+          <div class="contact-details">
+            <div><strong>Website:</strong> prahari-official.vercel.app</div>
+            <div><strong>Email:</strong> vasudeepkohli@gmail.com</div>
+            <div><strong>Phone:</strong> +91 77809 87246</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid #eee; padding-top: 30px; margin-top: 60px;">
+      <h4 style="font-size: 20px; margin: 0 0 10px 0;">PRAHARI Grid Systems</h4>
+      <p style="margin: 0; color: #555; line-height: 1.6;">Our Mission: To build safer, smarter, and more connected public spaces through intelligent infrastructure, making emergency access a standard feature of every Indian city.</p>
+    </div>
+  </div>
+</body>
+</html>
