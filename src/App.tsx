@@ -331,11 +331,7 @@ export default function App() {
           <FadeIn>
             <h2 className="font-heading text-3xl font-bold tracking-tight mb-4">Download Company Brochure</h2>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">Learn more about PRAHARI’s infrastructure platform, deployment environments, and capabilities.</p>
-            <a 
-              href="/PRAHARI_Brochure_Final.pdf?v=2" 
-              download
-              className="inline-flex items-center gap-2 bg-black text-white hover:bg-gray-800 rounded-full px-8 py-3 font-semibold transition-colors"
-            >
+            <a href="/PRAHARI_Brochure_Final.pdf" download className="inline-flex items-center gap-2 bg-black text-white hover:bg-gray-800 rounded-full px-8 py-3 font-semibold transition-colors">
               <FileText className="w-5 h-5" />
               Download Brochure (PDF)
             </a>
